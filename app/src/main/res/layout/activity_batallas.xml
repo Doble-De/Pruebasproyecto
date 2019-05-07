@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BatallasActivity">
+
+    <Button
+        android:id="@+id/huir"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Huir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.731" />
+
+    <Button
+        android:id="@+id/ataque"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Atacar"
+        app:layout_constraintBottom_toTopOf="@+id/objeto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/objeto"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Objetos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        android:text="Elige una Opción"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enemigo" />
+
+    <Button
+        android:id="@+id/defensa"
+        android:layout_width="164dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Defender"
+        app:layout_constraintBottom_toTopOf="@+id/huir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/valor"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/enemigo"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ogre"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/animataque"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/enemigo"
+        app:layout_constraintEnd_toEndOf="@+id/enemigo"
+        app:layout_constraintStart_toStartOf="@+id/enemigo"
+        app:layout_constraintTop_toTopOf="@+id/enemigo"
+        app:layout_constraintVertical_bias="0.52"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/personaje"
+        android:layout_width="141dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valor"
+        app:srcCompat="@drawable/hero"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/escudo"
+        android:layout_width="97dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/personaje"
+        app:layout_constraintStart_toStartOf="@+id/personaje"
+        app:layout_constraintTop_toTopOf="@+id/personaje"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/animdefensa"
+        android:layout_width="56dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/escudo"
+        app:layout_constraintEnd_toEndOf="@+id/escudo"
+        app:layout_constraintStart_toStartOf="@+id/escudo"
+        app:layout_constraintTop_toTopOf="@+id/escudo"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/estados"
+        android:layout_width="136dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="@+id/personaje"
+        app:layout_constraintEnd_toEndOf="@+id/animdefensa"
+        app:layout_constraintStart_toStartOf="@+id/personaje"
+        app:layout_constraintTop_toTopOf="@+id/personaje"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/transparent" />
+</android.support.constraint.ConstraintLayout>
