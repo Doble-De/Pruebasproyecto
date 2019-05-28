@@ -54,7 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -124,7 +124,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -196,7 +196,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -231,7 +231,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -266,7 +266,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -301,7 +301,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -337,13 +337,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bacio"
+                    android:text="Vacio"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
     </GridLayout>
+
 
     <ImageView
         android:id="@+id/salir"
