@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,8 @@ import com.dalealdado.pruebasproyecto.Shake.ShakeDetector;
 import java.util.Random;
 
 public class ModalDado {
+
+    Button exit;
 
     MutableLiveData<Integer> valor20 = new MutableLiveData<>();
     final int delay = 150;
@@ -47,8 +50,10 @@ public class ModalDado {
             dado.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dado.setContentView(R.layout.dado_modal);
 
+            exit = dado.findViewById(R.id.exitd);
             final TextView dado20tv = (TextView) dado.findViewById(R.id.dado20tv);
             ImageView dado20 = (ImageView) dado.findViewById(R.id.dado20);
+
 
 
             switch (tipo){
@@ -142,6 +147,13 @@ public class ModalDado {
                             dado.dismiss();
                         }
                     }
+                }
+            });
+
+            exit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dado.dismiss();
                 }
             });
 

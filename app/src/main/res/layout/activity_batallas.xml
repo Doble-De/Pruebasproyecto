@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/batalla"
     tools:context=".BatallasActivity">
 
     <Button
@@ -49,12 +50,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Elige una Opción"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enemigo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
 
     <Button
         android:id="@+id/defensa"
@@ -79,16 +83,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/valore"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/enemigo"
         android:layout_width="141dp"
         android:layout_height="135dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ogre"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.92"
+        app:srcCompat="@drawable/cazador"
+        tools:srcCompat="@drawable/cazador" />
 
     <ImageView
         android:id="@+id/animataque"
@@ -108,10 +126,13 @@
         android:layout_height="135dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valor"
-        app:srcCompat="@drawable/hero"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.90999997"
+        app:srcCompat="@drawable/pm1"
+        tools:srcCompat="@drawable/pm1" />
 
     <ImageView
         android:id="@+id/escudo"
@@ -144,4 +165,30 @@
         app:layout_constraintTop_toTopOf="@+id/personaje"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/bocadillo"
+        android:layout_width="120dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/animataque"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <ImageView
+        android:id="@+id/gifdado"
+        android:layout_width="46dp"
+        android:layout_height="58dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bocadillo"
+        app:layout_constraintEnd_toEndOf="@+id/bocadillo"
+        app:layout_constraintStart_toStartOf="@+id/bocadillo"
+        app:layout_constraintTop_toTopOf="@+id/bocadillo"
+        app:srcCompat="@drawable/dado" />
 </android.support.constraint.ConstraintLayout>

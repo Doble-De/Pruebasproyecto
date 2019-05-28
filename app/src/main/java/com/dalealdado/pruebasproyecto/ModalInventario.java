@@ -6,12 +6,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class ModalInventario {
 
     int[] item= new int[9];
     ImageView ivitem1, ivitem2, ivitem3, ivitem4, ivitem5, ivitem6, ivitem7, ivitem8, ivitem9;
+    Button salir;
 
 
     public interface ObjetoUsado{
@@ -28,6 +30,7 @@ public class ModalInventario {
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.activity_modal_inventario);
+        salir = dialog.findViewById(R.id.exit);
         item[0] = 1;
         item[1] = 3;
 
@@ -49,6 +52,21 @@ public class ModalInventario {
             @Override
             public void onClick(View v) {
                 interfaz.IdObjeto(item[0]);
+                dialog.dismiss();
+            }
+        });
+
+        ivitem2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaz.IdObjeto(item[1]);
+                dialog.dismiss();
+            }
+        });
+
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 dialog.dismiss();
             }
         });

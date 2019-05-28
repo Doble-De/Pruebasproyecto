@@ -16,21 +16,25 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.dalealdado.pruebasproyecto.Shake.ShakeDetector;
 
-public class BatallasActivity extends AppCompatActivity implements ModalDado.MostrarResultado, ModalInventario.ObjetoUsado{
+import java.util.Random;
+
+public class BatallasActivity extends AppCompatActivity implements ModalDado.MostrarResultado, ModalInventario.ObjetoUsado {
 
     private Handler mHandler = new Handler();
     Context context;
-    TextView resultado;
-    int num = 0;
-    ImageView corte;
+    TextView resultado, resultadoe;
+    int num = 0, tirada;
+    ImageView corte, tirodado, bocadillo;
     ImageView escudo;
-    ImageView defensa;
+    ImageView defensahit;
     ImageView enemigo;
     ImageView personaje;
     ImageView estados;
+    Button ataque, defensa, huida, objetos;
     String accion;
     MediaPlayer mp, mp2, mp3, mp4, heal, fire, firehit;
-    int contador=1;
+    int contador = 1;
+    Random random = new Random();
     private SensorManager mSensorManager;
     private Sensor mAccelerometrer;
     private ShakeDetector mShakeDetector;
@@ -43,21 +47,25 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         mp2 = MediaPlayer.create(this, R.raw.escudo2);
         mp3 = MediaPlayer.create(this, R.raw.escudo);
         mp4 = MediaPlayer.create(this, R.raw.gallina);
-        heal = MediaPlayer.create(this,R.raw.heal);
+        heal = MediaPlayer.create(this, R.raw.heal);
         fire = MediaPlayer.create(this, R.raw.fuego);
         firehit = MediaPlayer.create(this, R.raw.firehit);
         context = this;
 
-        Button ataque = (Button) findViewById(R.id.ataque);
-        Button defensa = (Button) findViewById(R.id.defensa);
-        Button huida = (Button) findViewById(R.id.huir);
-        Button objetos = (Button) findViewById(R.id.objeto);
+        bocadillo = findViewById(R.id.bocadillo);
+        tirodado = findViewById(R.id.gifdado);
+        ataque = (Button) findViewById(R.id.ataque);
+        defensa = (Button) findViewById(R.id.defensa);
+        huida = (Button) findViewById(R.id.huir);
+        objetos = (Button) findViewById(R.id.objeto);
         resultado = (TextView) findViewById(R.id.valor);
+        resultadoe = (TextView) findViewById(R.id.valore);
 
+        bocadillo.setImageResource(R.color.transparent);
+        tirodado.setImageResource(R.color.transparent);
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         mAccelerometrer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mShakeDetector = new ShakeDetector();
-
 
         defensa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +108,7 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(mShakeDetector);
     }
@@ -117,46 +125,11 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         AnimacionHuida();
     }
 
+    // Golpear y sus animaciones
 
-    private Runnable AnimacionCura = new Runnable() {
-        @Override
-        public void run() {
-            estados = (ImageView) findViewById(R.id.estados);
-
-            switch (contador){
-                case 1: estados.setImageResource(R.drawable.heal1);
-                    contador++;
-                    YoYo.with(Techniques.FadeInUp)
-                            .duration(600)
-                            .playOn(estados);
-                    break;
-                case 2: estados.setImageResource(R.drawable.heal2);
-                    heal.start();
-                    YoYo.with(Techniques.Pulse)
-                            .duration(600)
-                            .playOn(estados);
-                    contador++;
-                    break;
-                case 3: estados.setImageResource(R.drawable.heal3);
-                    YoYo.with(Techniques.Pulse)
-                            .duration(400)
-                            .playOn(estados);
-                    contador ++;
-                    break;
-                case 4:  estados.setImageResource(R.drawable.heal3);
-                    YoYo.with(Techniques.FadeOutDown)
-                            .duration(800)
-                            .playOn(estados);
-                    contador = 1;
-                    break;
-            }
-        }
-    };
-
-
-    public void AnimaciónPegar(){
+    public void AnimaciónPegar() {
         corte = (ImageView) findViewById(R.id.animataque);
-        if (num > 5 && accion.equals("ataque")){
+        if (num > 5 && accion.equals("ataque")) {
             corte.setImageResource(R.drawable.tajo);
             YoYo.with(Techniques.ZoomInLeft)
                     .duration(1000)
@@ -165,14 +138,28 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
             YoYo.with(Techniques.ZoomOut)
                     .duration(3000)
                     .playOn(corte);
-
+            turnoEnemigo();
         }
+
     }
 
-    public void AnimaciónDefender(){
+    private Runnable sonidotajo = new Runnable() {
+        @Override
+        public void run() {
+            enemigo = (ImageView) findViewById(R.id.enemigo);
+            mp.start();
+            YoYo.with(Techniques.Wobble)
+                    .duration(200)
+                    .playOn(enemigo);
+        }
+    };
+
+    // Defender y sus animaciones
+
+    public void AnimaciónDefender() {
         escudo = (ImageView) findViewById(R.id.escudo);
-        defensa = (ImageView) findViewById(R.id.animdefensa);
-        if (num > 5 && accion.equals("defensa")){
+        defensahit = (ImageView) findViewById(R.id.animdefensa);
+        if (num > 5 && accion.equals("defensa")) {
             escudo.setImageResource(R.drawable.escudo);
             YoYo.with(Techniques.StandUp)
                     .duration(500)
@@ -187,7 +174,49 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         }
     }
 
-    public void AnimacionHuida(){
+    private Runnable golpesDefensa = new Runnable() {
+        @Override
+        public void run() {
+            defensahit = (ImageView) findViewById(R.id.animdefensa);
+            switch (contador) {
+                case 1:
+                    defensahit.setImageResource(R.drawable.defensehit1);
+                    contador++;
+                    YoYo.with(Techniques.Flash)
+                            .duration(300)
+                            .playOn(defensa);
+                    break;
+                case 2:
+                    defensahit.setImageResource(R.drawable.defensehit2);
+                    YoYo.with(Techniques.Flash)
+                            .duration(300)
+                            .playOn(defensa);
+                    contador++;
+                    mp3.start();
+                    break;
+                case 3:
+                    defensahit.setImageResource(R.drawable.defensehit3);
+                    YoYo.with(Techniques.Flash)
+                            .duration(300)
+                            .playOn(defensa);
+                    contador++;
+                    break;
+                case 4:
+                    defensahit.setImageResource(R.color.transparent);
+                    YoYo.with(Techniques.FadeOutLeft)
+                            .duration(1000)
+                            .playOn(escudo);
+                    contador = 1;
+                    break;
+            }
+
+
+        }
+    };
+
+    // Huida
+
+    public void AnimacionHuida() {
 
         if (num > 5 && accion.equals("huida")) {
             personaje = (ImageView) findViewById(R.id.personaje);
@@ -203,21 +232,35 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
     }
 
 
-    private Runnable sonidotajo = new Runnable() {
-        @Override
-        public void run() {
-            enemigo = (ImageView) findViewById(R.id.enemigo);
-            mp.start();
-            YoYo.with(Techniques.Wobble)
-                    .duration(200)
-                    .playOn(enemigo);
+    //Inventatio y sus animaciones
+
+    @Override
+    public void IdObjeto(int id) {
+        if (id == 1) {
+            mHandler.postDelayed(AnimacionCura, 100);
+            mHandler.postDelayed(AnimacionCura, 400);
+            mHandler.postDelayed(AnimacionCura, 1000);
+            mHandler.postDelayed(AnimacionCura, 1300);
+        } else if (id == 3) {
+            corte = (ImageView) findViewById(R.id.animataque);
+            fire.start();
+            corte.setImageResource(R.drawable.fuego);
+            YoYo.with(Techniques.ZoomInLeft)
+                    .duration(1000)
+                    .playOn(corte);
+            mHandler.postDelayed(sonidofirehit, 460);
+            YoYo.with(Techniques.ZoomOut)
+                    .duration(3000)
+                    .playOn(corte);
+
         }
-    };
+    }
 
     private Runnable sonidofirehit = new Runnable() {
         @Override
         public void run() {
             enemigo = (ImageView) findViewById(R.id.enemigo);
+            corte.setImageResource(R.drawable.fuegohit);
             firehit.start();
             YoYo.with(Techniques.Wobble)
                     .duration(200)
@@ -225,65 +268,114 @@ public class BatallasActivity extends AppCompatActivity implements ModalDado.Mos
         }
     };
 
-    private Runnable golpesDefensa = new Runnable() {
+    private Runnable AnimacionCura = new Runnable() {
         @Override
         public void run() {
-            defensa = (ImageView) findViewById(R.id.animdefensa);
-            switch (contador){
-                case 1: defensa.setImageResource(R.drawable.defensehit1);
-                        contador++;
-                        YoYo.with(Techniques.Flash)
-                                .duration(300)
-                                .playOn(defensa);
-                        break;
-                case 2: defensa.setImageResource(R.drawable.defensehit2);
-                        YoYo.with(Techniques.Flash)
-                                .duration(300)
-                                .playOn(defensa);
-                        contador++;
-                        mp3.start();
-                        break;
-                case 3: defensa.setImageResource(R.drawable.defensehit3);
-                        YoYo.with(Techniques.Flash)
-                                .duration(300)
-                                .playOn(defensa);
-                        contador ++;
-                        break;
-                case 4: defensa.setImageResource(R.color.transparent);
-                        YoYo.with(Techniques.FadeOutLeft)
-                                .duration(1000)
-                                .playOn(escudo);
-                        contador = 1;
-                        break;
+            estados = (ImageView) findViewById(R.id.estados);
+
+            switch (contador) {
+                case 1:
+                    estados.setImageResource(R.drawable.heal1);
+                    contador++;
+                    YoYo.with(Techniques.FadeInUp)
+                            .duration(600)
+                            .playOn(estados);
+                    break;
+                case 2:
+                    estados.setImageResource(R.drawable.heal2);
+                    heal.start();
+                    YoYo.with(Techniques.Pulse)
+                            .duration(600)
+                            .playOn(estados);
+                    contador++;
+                    break;
+                case 3:
+                    estados.setImageResource(R.drawable.heal3);
+                    YoYo.with(Techniques.Pulse)
+                            .duration(400)
+                            .playOn(estados);
+                    contador++;
+                    break;
+                case 4:
+                    estados.setImageResource(R.drawable.heal3);
+                    YoYo.with(Techniques.FadeOutDown)
+                            .duration(800)
+                            .playOn(estados);
+                    contador = 1;
+                    break;
             }
-
-
         }
     };
 
 
-    @Override
-    public void IdObjeto(int id) {
-        if (id == 1){
+    // Enemigo Hit
 
-            mHandler.postDelayed(AnimacionCura, 100);
-            mHandler.postDelayed(AnimacionCura, 400);
-            mHandler.postDelayed(AnimacionCura, 1000);
-            mHandler.postDelayed(AnimacionCura, 1300);
-        }else if (id == 2){
-            corte = (ImageView) findViewById(R.id.animataque);
-            if (num > 5 && accion.equals("ataque")){
-                fire.start();
-                corte.setImageResource(R.drawable.tajo);
-                YoYo.with(Techniques.ZoomInLeft)
+    void turnoEnemigo() {
+        ataque.setEnabled(false);
+        defensa.setEnabled(false);
+        huida.setEnabled(false);
+        objetos.setEnabled(false);
+
+        mHandler.postDelayed(mostrarItems, 2000);
+        mHandler.postDelayed(tiradaEnemigo, 5000);
+        mHandler.postDelayed(AnimaciónPegarEnemigo, 6000);
+        //AnimaciónPegarEnemigo();
+
+    }
+
+    private Runnable mostrarItems = new Runnable() {
+        @Override
+        public void run() {
+            bocadillo.setImageResource(R.drawable.bocadillo);
+            tirodado.setImageResource(R.drawable.dado);
+
+        }
+    };
+
+    private Runnable tiradaEnemigo = new Runnable() {
+        @Override
+        public void run() {
+            tirada = random.nextInt(20 + 1);
+            resultadoe.setText(String.valueOf(tirada));
+            YoYo.with(Techniques.ZoomInUp)
+                    .duration(400)
+                    .playOn(resultadoe);
+            bocadillo.setImageResource(R.color.transparent);
+            tirodado.setImageResource(R.color.transparent);
+        }
+    };
+
+    private Runnable AnimaciónPegarEnemigo = new Runnable() {
+        @Override
+        public void run() {
+            estados = (ImageView) findViewById(R.id.estados);
+            if (num > 5 && accion.equals("ataque")) {
+                estados.setImageResource(R.drawable.tajoe);
+                YoYo.with(Techniques.ZoomInRight)
                         .duration(1000)
-                        .playOn(corte);
-                mHandler.postDelayed(sonidofirehit, 460);
+                        .playOn(estados);
+                mHandler.postDelayed(sonidotajoe, 460);
                 YoYo.with(Techniques.ZoomOut)
                         .duration(3000)
-                        .playOn(corte);
-
+                        .playOn(estados);
             }
+
+            ataque.setEnabled(true);
+            defensa.setEnabled(true);
+            huida.setEnabled(true);
+            objetos.setEnabled(true);
+
         }
-    }
+    };
+
+    private Runnable sonidotajoe = new Runnable() {
+        @Override
+        public void run() {
+            personaje = (ImageView) findViewById(R.id.personaje);
+            mp.start();
+            YoYo.with(Techniques.Wobble)
+                    .duration(200)
+                    .playOn(personaje);
+        }
+    };
 }

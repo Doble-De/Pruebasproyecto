@@ -23,5 +23,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, BatallasActivity.class));
             }
         });
+
+        findViewById(R.id.personaje).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProtagonistaActivity.class));
+
+            }
+        });
     }
 }

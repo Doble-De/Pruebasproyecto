@@ -3,6 +3,7 @@
     package="com.dalealdado.pruebasproyecto">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ModalInventario"></activity>
+        <activity android:name=".SelectPj"></activity>
+        <activity android:name=".ProtagonistaActivity" />
+        <activity android:name=".ModalInventario" />
         <activity android:name=".BatallasActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

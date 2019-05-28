@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectPj">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_weight="8"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:padding="16dp"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Fila 1/Columna1-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pm1" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 1/Columna2-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjf1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pm2" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 1/Columna3-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pm3" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 1/Columna4-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pm4" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <!--Fila 2/Columna1-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjm3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pf1" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 2/Columna2-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pf2" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 2/Columna3-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjm4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pf3" />
+
+        </android.support.v7.widget.CardView>
+
+        <!--Fila 2/Columna4-->
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:id="@+id/pjf4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/pf4" />
+
+        </android.support.v7.widget.CardView>
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>

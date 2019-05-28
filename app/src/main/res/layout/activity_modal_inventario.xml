@@ -7,6 +7,7 @@
     tools:context=".ModalInventario">
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="390dp"
         android:layout_height="520dp"
         android:layout_marginStart="16dp"
@@ -15,7 +16,7 @@
         android:layout_marginBottom="24dp"
         android:layout_weight="8"
         android:alignmentMode="alignMargins"
-        android:columnCount= "3"
+        android:columnCount="3"
         android:columnOrderPreserved="false"
         android:padding="16dp"
         android:rowCount="3"
@@ -189,7 +190,8 @@
                     android:id="@+id/item5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/escudo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -259,7 +261,7 @@
                     android:id="@+id/item7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -341,395 +343,27 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <!--&lt;!&ndash;Fila 3/Columna2&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="0dp"-->
-            <!--android:layout_marginRight="0dp"-->
-            <!--android:layout_marginBottom="0dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:id="@+id/item10"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 3/Columna3&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="0dp"-->
-            <!--android:layout_marginRight="0dp"-->
-            <!--android:layout_marginBottom="0dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:id="@+id/item11"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/espada" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Espada"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 3/Columna4&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="0dp"-->
-            <!--android:layout_marginRight="0dp"-->
-            <!--android:layout_marginBottom="0dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:id="@+id/item12"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-
-        <!--&lt;!&ndash;Fila 4/Columna1&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/espada" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Espada"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 4/Columna2&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 4/Columna3&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/espada" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Espada"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 4/Columna4&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-
-        <!--&lt;!&ndash;Fila 5/Columna1&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/espada" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Espada"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 5/Columna2&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 5/Columna3&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/espada" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Espada"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--&lt;!&ndash;Fila 5/Columna4&ndash;&gt;-->
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_rowWeight="1"-->
-            <!--android:layout_columnWeight="1"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--app:cardCornerRadius="8dp"-->
-            <!--app:cardElevation="8dp">-->
-
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal|center_vertical"-->
-                <!--android:layout_margin="16dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:src="@drawable/potion" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Pocion"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textSize="18sp" />-->
-            <!--</LinearLayout>-->
-        <!--</android.support.v7.widget.CardView>-->
-
     </GridLayout>
+
+    <ImageView
+        android:id="@+id/salir"
+        android:layout_width="67dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/salir"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/salir"
+        app:layout_constraintEnd_toEndOf="@+id/salir"
+        app:layout_constraintStart_toStartOf="@+id/salir"
+        app:layout_constraintTop_toTopOf="@+id/salir" />
+
 </android.support.constraint.ConstraintLayout>
